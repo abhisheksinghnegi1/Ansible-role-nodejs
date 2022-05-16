@@ -1,0 +1,6 @@
+# change variable for reactjs
+git_react_repo_url: git@gitlab.com:techsbiz-js/react/miojah-web-admin.git
+git_react_repo_version: staging
+react_work_dir: /var/www/beta-admin-web-app
+react_domain_name: admin.miojah.com
+react_work_dir_build: /var/www/beta-admin-web-app/build/

@@ -1,0 +1,11 @@
+---
+
+
+    - name: nginx template copy
+      template: 
+        src: vhosts.j2
+        dest: /etc/nginx/conf.d/{{ nodejs_domain_name }}.conf
+        #  user: nginx
+        #  group: nginx
+      notify:
+        - restart nginx

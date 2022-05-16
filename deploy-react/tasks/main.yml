@@ -1,0 +1,9 @@
+---
+# tasks file for deploy-react
+
+
+
+ # - name: Same deploying in any os 
+   # when: ansible_distribution == "RedHat"
+   - import_tasks: centos-reactjs-deploy.yml
+   - import_tasks: nginx-reactjs.yml

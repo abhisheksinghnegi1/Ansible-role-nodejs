@@ -1,0 +1,13 @@
+---
+
+
+
+     - name: checking apache2 installed or not 
+       apt: 
+           name: apache2
+           state: present
+           update_cache: yes
+    
+     - name: using jinja template 
+           src: apache.j2
+           dest: /etc/apache2/sites-enabled/react_{{ domain_react }}.conf

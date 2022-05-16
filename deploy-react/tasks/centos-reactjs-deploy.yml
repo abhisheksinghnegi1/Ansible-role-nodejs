@@ -1,0 +1,30 @@
+---
+
+
+      - name: git repo clone of reactjs
+        git: 
+            repo: "{{ git_react_repo_url }}"
+            dest:  "{{ react_work_dir }}"
+            version: "{{ git_react_repo_version }}"
+            accept_hostkey: yes
+            force: yes
+        tags: centos-react-git
+
+
+      - name: copy env file to work dir
+        copy: 
+             src: env
+             dest: "{{ react_work_dir }}/.env"
+        tags: centos-react-env     
+
+
+      - name: yarn install 
+        shell: cd "{{ react_work_dir }}"; yarn install > yarn_install.log
+        tags: centos-react-yarn-install
+
+
+      - name: yarn build'
+        shell: cd "{{ react_work_dir }}"; yarn build > yarn_build.log
+        tags: centos-react-yarn-build
+
+       

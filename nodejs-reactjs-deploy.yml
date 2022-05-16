@@ -1,0 +1,9 @@
+---
+
+  - name: Deploying services
+    hosts: server
+    roles:
+            - deploy-api
+            - deploy-react
+            
+             

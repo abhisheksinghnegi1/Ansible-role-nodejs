@@ -1,0 +1,13 @@
+# nodejs-api
+git_repo_url: git@gitlab.com:techsbiz-js/nodejs/miojah-backend.git 
+git_repo_version: staging
+nodejs_api_work_dir: /var/www/beta-miojah-api
+ 
+Node_ENV_NAME: development
+script_path: server.js
+pm2_api_name: beta-miojah-api
+
+nodes_api_port: 3001
+nodejs_domain_name: beta-api.miojah.com
+# please check env file in  deploye api file
+

@@ -1,0 +1,10 @@
+---
+# handlers file for deploy-react
+
+
+
+ #handlers:
+    - name: restart nginx
+      service: 
+         name:  nginx
+         state: restarted

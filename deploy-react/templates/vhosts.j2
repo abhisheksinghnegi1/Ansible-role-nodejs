@@ -1,0 +1,18 @@
+server {
+
+        listen {{ ansible_facts.default_ipv4.address }}:80;
+        server_name {{ react_domain_name }};
+        root {{ react_work_dir_build }};
+        index index.html index.php index.htm;
+
+        location / {
+            
+               # proxy_http_version 1.1;
+               # proxy_set_header Upgrade $http_upgrade;
+               # proxy_set_header Connection 'upgrade';
+               # proxy_set_header Host $host;
+               # proxy_cache_bypass $http_upgrade;
+                try_files $uri $uri/ /index.html?/$request_uri;
+      }
+
+}

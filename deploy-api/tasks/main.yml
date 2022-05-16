@@ -1,0 +1,7 @@
+---
+# tasks file for friendly-test
+#
+#
+
+- import_tasks: backend-deploy.yml
+- import_tasks: nginx-deploy.yml

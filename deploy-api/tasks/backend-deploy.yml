@@ -1,0 +1,35 @@
+---
+
+
+         - name: git repo clone
+           git:
+                repo: "{{ git_repo_url }}"
+                dest: "{{ nodejs_api_work_dir }}"
+                version: "{{ git_repo_version }}"
+                accept_hostkey: yes
+                force: yes
+           tags:
+                 - api-git-clone
+           
+
+         - name: copy env file
+           copy: 
+             src: env
+             dest: "{{ nodejs_api_work_dir }}/.env"
+           tags: 
+                  - api-env-deploy
+
+         - name:  yarn install 
+           shell: cd "{{ nodejs_api_work_dir }}"; yarn install 
+           register: yarn_install_result
+           tags: 
+                 - api-yarn-install
+         - debug: var=yarn_install_result 
+
+
+    #     - name: pm2 start 
+    #       shell: cd "{{ nodejs_api_work_dir }}"; NODE_ENV="{{ Node_ENV_NAME }}" pm2 start "{{ script_path }}" --name "{{ pm2_api_name }}" --merge-logs --log-date-format='YYYY-MM-DD HH:mm Z -i max'
+    #       tags:
+    #              - api-pm2-start
+          
+         
